@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cars!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS BootStrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- CSS Custom -->
+        {% load static %}
+        <link href= "{% static 'myApp/style.css' %}" rel="stylesheet" type="text/css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="Header"> 
+        <h1 class="headerText">  
+         --- A Car Page ---
+        </h1> 
+      </div>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          {% comment %} <a class="navbar-brand" href="#">Cars</a> {% endcomment %}
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <ul class="nav justify-content-center">      
+                {% for item in CarList %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'myApp:Toyota' %}">{{item}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+        {% comment %} Toyota tab {% endcomment %}
+      <div class="card text-center Toyota" id = "Toyota">
+        <img src="{% static 'myApp/Toyota.jpeg' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Toyota</h4>
+          <p class="card-text">Toyota, the staple names of automobile reliability </p>
+          <a href="{% url 'myApp:Toyota' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div>
+      {% comment %} Honda Tab {% endcomment %}
+      <div class="card text-center" id ="Honda" >
+        <img src="{% static 'myApp/Honda.gif' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Honda</h4>
+          <p class="card-text" id="Honda-card-text">Honda, the trusted family brand</p>
+          <a href="{% url 'myApp:Honda' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div>
+      {% comment %} Mercedes Tab {% endcomment %}
+      <div class="card text-center" id ="Mercedes">
+        <img class="MercedesLogo" src="{% static 'myApp/Mercedes.png' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Mercedes</h4>
+          <p class="card-text">Extravagant with style</p>
+          <a href="{% url 'myApp:Honda' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div>
+      
+      <div class="card text-center" id ="Mazda">
+        <img class="MazdaLogo" src="{% static 'myApp/Mazda.jpeg' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Mazda</h4>
+          <p class="card-text">A Japanese staple of simplicity</p>
+          <a href="{% url 'myApp:Honda' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div>
+
+      <div class="card text-center" id ="Hyundai">
+        <img class="HyundaiLogo" src="{% static 'myApp/Hyundai.png' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Hyundai</h4>
+          <p class="card-text">Korean Legacy</p>
+          <a href="{% url 'myApp:Honda' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div>
+      
+      <div class="card text-center" id ="Lexus">
+        <img class="LexusLogo" src="{% static 'myApp/Lexus.webp' %}" class="card-img-top" alt="The Toyota Logo">
+        <div class="card-body">
+          <h4 class="card-title Toyota">Lexus</h4>
+          <p class="card-text">Toyota's rich Aunty's more relaxed cousin</p>
+          <a href="{% url 'myApp:Honda' %}" class="btn btn-primary">Check Out!</a>
+        </div>
+      </div> 
+    </body>
+</html>

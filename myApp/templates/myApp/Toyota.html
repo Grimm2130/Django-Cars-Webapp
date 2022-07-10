@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% comment %} 
+Brief description of the page with a link to the car company's website 
+{% endcomment %}
+<ul>
+{% for i in allCars%}
+<li> {{i.Brand}}</li>
+{% endfor %}
+</ul>
+{% endblock  %}
+
+
+{%block description%}
+{% comment %} Contains brief description and Link to main car apge{% endcomment %}
+{%endblock%}
+
+
+{%block image%}
+{% comment %} Contains a picture of the car in question {% endcomment %}
+{%endblock%}
+
+{%block attributes%}
+{% comment %} Table of a car attributes
+Using context mapping, map the following attributes:
+* MPG
+* Durability
+* Weight
+* Trunk size
+* Aesthetics
+* Overall Rating in the form of stars
+{% endcomment %}
+{% comment %} <ul class="list-group">
+  {% for items in attributes %}
+  <li class="list-group-item"> {{items}} </li>
+  {% endfor %}
+</ul> {% endcomment %}
+<!-- On tables -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">  </th>
+      <th scope="col">First</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+    </tr>
+  </tbody>
+</table>
+{%endblock%}
